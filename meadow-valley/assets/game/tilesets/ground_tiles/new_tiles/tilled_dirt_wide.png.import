@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6sdhpcncvr1w"
-path="res://.godot/imported/water_2.png-10677fabda0b721a82879e41a8060f00.ctex"
+uid="uid://d2dubedn1x56e"
+path="res://.godot/imported/tilled_dirt_wide.png-0bdbe0a3403310961d78de65c46649af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/tilesets/ground_tiles/water_frames/water_2.png"
-dest_files=["res://.godot/imported/water_2.png-10677fabda0b721a82879e41a8060f00.ctex"]
+source_file="res://assets/game/tilesets/ground_tiles/new_tiles/tilled_dirt_wide.png"
+dest_files=["res://.godot/imported/tilled_dirt_wide.png-0bdbe0a3403310961d78de65c46649af.ctex"]
 
 [params]
 
