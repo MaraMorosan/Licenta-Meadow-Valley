@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxenoap6ynomf"]
+
+[ext_resource type="Texture2D" uid="uid://4pog60brrdsk" path="res://assets/game/objects/trees_stumps_bushes.png" id="1_dp3e7"]
+[ext_resource type="PackedScene" uid="uid://cjhuelsfvgqit" path="res://scenes/components/collectable_component.tscn" id="2_txb8f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7vr4"]
+atlas = ExtResource("1_dp3e7")
+region = Rect2(96, 96, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qx6wk"]
+radius = 8.01561
+
+[node name="Log" type="Sprite2D"]
+z_index = 2
+texture = SubResource("AtlasTexture_n7vr4")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_txb8f")]
+collectable_name = "log"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+position = Vector2(0, 1.5)
+shape = SubResource("CircleShape2D_qx6wk")
+debug_color = Color(0.826895, 0.282133, 0.703752, 0.42)
