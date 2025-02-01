@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5m1s0xqap7l2"]
+
+[ext_resource type="Script" path="res://scenes/components/damage_component.gd" id="1_wiaqj"]
+
+[node name="DamageComponent" type="Node2D"]
+script = ExtResource("1_wiaqj")
+
+[node name="DamageComponent" type="Node2D" parent="."]
+script = ExtResource("1_wiaqj")
+
+[node name="DamageComponent2" type="Node2D" parent="."]
+script = ExtResource("1_wiaqj")
+max_damage = 4
