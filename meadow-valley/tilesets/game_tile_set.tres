@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=16 format=3 uid="uid://b014t4ekunn1s"]
+[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://b014t4ekunn1s"]
 
 [ext_resource type="Texture2D" uid="uid://cj7tygrhpj7un" path="res://assets/game/tilesets/ground_tiles/water_frames/water.png" id="1_speqs"]
 [ext_resource type="Texture2D" uid="uid://dkgeqtncmdg32" path="res://assets/game/tilesets/ground_tiles/new_tiles/grass_tiles_v2.png" id="2_77sj6"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://4pog60brrdsk" path="res://assets/game/objects/trees_stumps_bushes.png" id="4_m8x8g"]
 [ext_resource type="Texture2D" uid="uid://coy38vy7scsh" path="res://assets/game/objects/mushrooms_flowers_stones.png" id="5_h4v8y"]
 [ext_resource type="PackedScene" uid="uid://d3m4nju4lj76x" path="res://scenes/objects/trees/large_tree.tscn" id="6_8g0ee"]
+[ext_resource type="PackedScene" uid="uid://dpan02m6akk7i" path="res://scenes/objects/rocks/Rock.tscn" id="6_cm3vu"]
 [ext_resource type="PackedScene" uid="uid://b3ena8pkdweor" path="res://scenes/houses/small_house.tscn" id="8_45lqy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_arp7l"]
@@ -265,6 +266,7 @@ resource_name = "Sources"
 scenes/1/scene = ExtResource("3_2dpp0")
 scenes/2/scene = ExtResource("8_45lqy")
 scenes/3/scene = ExtResource("4_8x6kj")
+scenes/4/scene = ExtResource("6_cm3vu")
 scenes/5/scene = ExtResource("6_8g0ee")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wlog2"]
@@ -505,7 +507,9 @@ texture = ExtResource("4_m8x8g")
 6:2/0 = 0
 7:2/0 = 0
 0:3/0 = 0
+0:3/0/y_sort_origin = 4
 1:3/0 = 0
+1:3/0/y_sort_origin = 4
 2:3/0 = 0
 3:3/0 = 0
 4:3/0 = 0
@@ -517,7 +521,9 @@ texture = ExtResource("4_m8x8g")
 0:5/size_in_atlas = Vector2i(2, 1)
 0:5/0 = 0
 0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.5, 2, 2.5, 2, 2.5, 4, -2.5, 4)
 1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 3, 4, 3, 4, 5, -4, 5)
 2:6/size_in_atlas = Vector2i(2, 1)
 2:6/0 = 0
 4:6/size_in_atlas = Vector2i(2, 1)
@@ -559,6 +565,7 @@ texture = ExtResource("5_h4v8y")
 2:4/0 = 0
 3:3/size_in_atlas = Vector2i(1, 2)
 3:3/0 = 0
+3:3/0/y_sort_origin = 8
 4:3/0 = 0
 5:3/0 = 0
 6:3/0 = 0
@@ -577,10 +584,13 @@ texture = ExtResource("5_h4v8y")
 8:4/0 = 0
 6:1/size_in_atlas = Vector2i(2, 2)
 6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, 9, 9, 9, 9.5, 11.5, -9, 11.5)
 8:1/size_in_atlas = Vector2i(2, 2)
 8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13, 3.5, 12, 8.5, 10, 12, 2, 12, -12, 7)
 10:0/size_in_atlas = Vector2i(2, 3)
 10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13, 12, 12.5, 14.5, 10, 19.5, 3, 22, -9, 17.5)
 
 [resource]
 physics_layer_0/collision_layer = 1
