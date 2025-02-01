@@ -168,10 +168,9 @@ animations = [{
 size = Vector2(10, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxvgy"]
-size = Vector2(10, 7)
+size = Vector2(10, 11)
 
 [node name="LargeTree" type="AnimatedSprite2D"]
-z_index = 2
 sprite_frames = SubResource("SpriteFrames_ik7ip")
 animation = &"fall_tree"
 autoplay = "default_tree"
@@ -188,7 +187,7 @@ shape = SubResource("RectangleShape2D_hato6")
 tool = 1
 
 [node name="HurtComponentCollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
-position = Vector2(0, -3.5)
+position = Vector2(0, -4.5)
 shape = SubResource("RectangleShape2D_mxvgy")
 debug_color = Color(0.658841, 0.513012, 0.130286, 0.42)
 

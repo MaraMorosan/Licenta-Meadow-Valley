@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg43mg04vtxhv"]
+
+[ext_resource type="Texture2D" uid="uid://coy38vy7scsh" path="res://assets/game/objects/mushrooms_flowers_stones.png" id="1_rjlxs"]
+[ext_resource type="PackedScene" uid="uid://cjhuelsfvgqit" path="res://scenes/components/collectable_component.tscn" id="2_vd7b7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83uxb"]
+atlas = ExtResource("1_rjlxs")
+region = Rect2(51, 21, 10, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oqu0g"]
+radius = 4.0
+
+[node name="Stone" type="Sprite2D"]
+z_index = 2
+texture = SubResource("AtlasTexture_83uxb")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_vd7b7")]
+collectable_name = "stone"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_oqu0g")
+debug_color = Color(0.302896, 0.516391, 0.935647, 0.42)
