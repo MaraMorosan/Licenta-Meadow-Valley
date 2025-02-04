@@ -46,22 +46,22 @@ position = Vector2(202, 180)
 navigation_polygon = SubResource("NavigationPolygon_cg6wi")
 
 [node name="Chicken" parent="Chickens" instance=ExtResource("3_rw128")]
-position = Vector2(284, 187)
+position = Vector2(250, 217)
 
 [node name="Chicken2" parent="Chickens" instance=ExtResource("3_rw128")]
-position = Vector2(271, 138)
+position = Vector2(250, 133)
 
 [node name="Chicken3" parent="Chickens" instance=ExtResource("3_rw128")]
-position = Vector2(332, 187)
+position = Vector2(350, 197)
 
 [node name="Chicken4" parent="Chickens" instance=ExtResource("3_rw128")]
-position = Vector2(326, 142)
+position = Vector2(342, 135)
 
 [node name="Chicken5" parent="Chickens" instance=ExtResource("3_rw128")]
-position = Vector2(306, 122)
+position = Vector2(292, 118)
 
 [node name="Chicken6" parent="Chickens" instance=ExtResource("3_rw128")]
-position = Vector2(307, 166)
+position = Vector2(294, 179)
 
 [node name="Chicken7" parent="Chickens" instance=ExtResource("3_rw128")]
-position = Vector2(301, 213)
+position = Vector2(296, 236)

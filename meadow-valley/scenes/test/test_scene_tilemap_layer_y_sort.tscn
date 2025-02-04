@@ -37,5 +37,5 @@ position = Vector2(202, 180)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
-[connection signal="animation_finished" from="GameTilemap/Objects/LargeTree" to="GameTilemap/Objects/LargeTree" method="_on_animation_finished"]
-[connection signal="animation_finished" from="GameTilemap/Objects/@AnimatedSprite2D@19364" to="GameTilemap/Objects/@AnimatedSprite2D@19364" method="_on_animation_finished"]
+[connection signal="animation_finished" from="GameTilemap/Objects/@AnimatedSprite2D@128323" to="GameTilemap/Objects/@AnimatedSprite2D@128323" method="_on_animation_finished"]
+[connection signal="animation_finished" from="GameTilemap/Objects/@AnimatedSprite2D@128324" to="GameTilemap/Objects/@AnimatedSprite2D@128324" method="_on_animation_finished"]
