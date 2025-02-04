@@ -172,7 +172,7 @@ size = Vector2(10, 11)
 
 [node name="LargeTree" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_ik7ip")
-animation = &"fall_tree"
+animation = &"default_tree"
 autoplay = "default_tree"
 offset = Vector2(0, -19)
 script = ExtResource("2_wqtgk")
@@ -192,6 +192,5 @@ shape = SubResource("RectangleShape2D_mxvgy")
 debug_color = Color(0.658841, 0.513012, 0.130286, 0.42)
 
 [node name="DamageComponent" parent="." instance=ExtResource("3_wiow4")]
-max_damage = 4
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
