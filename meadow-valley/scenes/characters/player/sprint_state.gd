@@ -4,6 +4,7 @@ extends NodeState
 @export var animated_sprite_2d: AnimatedSprite2D
 @export var sprint_speed: int = 100
 
+
 @warning_ignore("unused_parameter")
 func _on_process(delta: float) -> void:
 	pass
