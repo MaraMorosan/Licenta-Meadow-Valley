@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg0eql04i5cnh"
-path="res://.godot/imported/hearts.png-258cf7f668b14aedbced3ba594461789.ctex"
+uid="uid://dtbodtvqfsryd"
+path="res://.godot/imported/small_happines_sadness_icons.png-f6b832f6f1072848fd655bad25f053a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/ui_sprites/icons/special_icons/hearts.png"
-dest_files=["res://.godot/imported/hearts.png-258cf7f668b14aedbced3ba594461789.ctex"]
+source_file="res://assets/game/ui_sprites/dialouge_ui/icons/special_icons/small_happines_sadness_icons.png"
+dest_files=["res://.godot/imported/small_happines_sadness_icons.png-f6b832f6f1072848fd655bad25f053a7.ctex"]
 
 [params]
 

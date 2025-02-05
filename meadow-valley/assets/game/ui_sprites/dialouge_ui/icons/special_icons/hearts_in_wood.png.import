@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jcgige6resm8"
-path="res://.godot/imported/medium_happines_sadness_icons.png-8ebedc2135642c3bdd5fcf54618d3f9b.ctex"
+uid="uid://mesk63xoj414"
+path="res://.godot/imported/hearts_in_wood.png-cbf1a83d585e7a8e86baa3ff72ed7043.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/ui_sprites/icons/special_icons/medium_happines_sadness_icons.png"
-dest_files=["res://.godot/imported/medium_happines_sadness_icons.png-8ebedc2135642c3bdd5fcf54618d3f9b.ctex"]
+source_file="res://assets/game/ui_sprites/dialouge_ui/icons/special_icons/hearts_in_wood.png"
+dest_files=["res://.godot/imported/hearts_in_wood.png-cbf1a83d585e7a8e86baa3ff72ed7043.ctex"]
 
 [params]
 

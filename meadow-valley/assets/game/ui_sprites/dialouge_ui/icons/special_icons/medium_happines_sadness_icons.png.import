@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4frr5v85g2hc"
-path="res://.godot/imported/white_icons.png-9987cc26ac6cc3d3b83814b1552e6a3c.ctex"
+uid="uid://jcgige6resm8"
+path="res://.godot/imported/medium_happines_sadness_icons.png-b39e11a54cdb5b7b6af55d11c4301e0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/ui_sprites/icons/white_icons.png"
-dest_files=["res://.godot/imported/white_icons.png-9987cc26ac6cc3d3b83814b1552e6a3c.ctex"]
+source_file="res://assets/game/ui_sprites/dialouge_ui/icons/special_icons/medium_happines_sadness_icons.png"
+dest_files=["res://.godot/imported/medium_happines_sadness_icons.png-b39e11a54cdb5b7b6af55d11c4301e0e.ctex"]
 
 [params]
 
