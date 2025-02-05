@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pvgx8r62r1iw"
-path="res://.godot/imported/stars.png-04a430cd19c9df684dbca2c0f5519674.ctex"
+uid="uid://k8frg8e4v5x"
+path="res://.godot/imported/coins.png-3d767e1d8f579b995d57c854bd02c96b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/ui_sprites/icons/special_icons/stars.png"
-dest_files=["res://.godot/imported/stars.png-04a430cd19c9df684dbca2c0f5519674.ctex"]
+source_file="res://assets/game/ui_sprites/dialouge_ui/icons/special_icons/coins.png"
+dest_files=["res://.godot/imported/coins.png-3d767e1d8f579b995d57c854bd02c96b.ctex"]
 
 [params]
 

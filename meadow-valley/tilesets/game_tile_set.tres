@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://4pog60brrdsk" path="res://assets/game/objects/trees_stumps_bushes.png" id="4_m8x8g"]
 [ext_resource type="Texture2D" uid="uid://coy38vy7scsh" path="res://assets/game/objects/mushrooms_flowers_stones.png" id="5_h4v8y"]
 [ext_resource type="PackedScene" uid="uid://d3m4nju4lj76x" path="res://scenes/objects/trees/large_tree.tscn" id="6_8g0ee"]
-[ext_resource type="PackedScene" uid="uid://dpan02m6akk7i" path="res://scenes/objects/rocks/Rock.tscn" id="6_cm3vu"]
+[ext_resource type="PackedScene" uid="uid://dpan02m6akk7i" path="res://scenes/objects/rocks/rock.tscn" id="6_cm3vu"]
 [ext_resource type="PackedScene" uid="uid://b3ena8pkdweor" path="res://scenes/houses/small_house.tscn" id="8_45lqy"]
 [ext_resource type="Texture2D" uid="uid://cghj6foa6elgu" path="res://assets/game/tilesets/building_parts/fences.png" id="8_yme8n"]
 

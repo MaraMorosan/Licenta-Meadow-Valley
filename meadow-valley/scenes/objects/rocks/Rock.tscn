@@ -1,19 +1,19 @@
 [gd_scene load_steps=10 format=3 uid="uid://dpan02m6akk7i"]
 
-[ext_resource type="Texture2D" uid="uid://coy38vy7scsh" path="res://assets/game/objects/mushrooms_flowers_stones.png" id="1_hfwxo"]
-[ext_resource type="Shader" path="res://scenes/objects/rocks/shake.gdshader" id="1_mywen"]
-[ext_resource type="Script" path="res://scenes/objects/rocks/rock.gd" id="2_jja7a"]
-[ext_resource type="PackedScene" uid="uid://cnlpcx4ng55o8" path="res://scenes/components/hurt_component.tscn" id="3_8f7y7"]
-[ext_resource type="PackedScene" uid="uid://c5m1s0xqap7l2" path="res://scenes/components/damage_component.tscn" id="4_pftfh"]
+[ext_resource type="Shader" path="res://scenes/objects/rocks/shake.gdshader" id="1_m2hfw"]
+[ext_resource type="Texture2D" uid="uid://coy38vy7scsh" path="res://assets/game/objects/mushrooms_flowers_stones.png" id="2_q43ul"]
+[ext_resource type="Script" path="res://scenes/objects/rocks/rock.gd" id="3_16mfv"]
+[ext_resource type="PackedScene" uid="uid://cnlpcx4ng55o8" path="res://scenes/components/hurt_component.tscn" id="4_clp25"]
+[ext_resource type="PackedScene" uid="uid://c5m1s0xqap7l2" path="res://scenes/components/damage_component.tscn" id="5_fjv71"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e1ujq"]
 resource_local_to_scene = true
-shader = ExtResource("1_mywen")
+shader = ExtResource("1_m2hfw")
 shader_parameter/shake_intensity = 0.0
 shader_parameter/shake_speed = 20.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7csuc"]
-atlas = ExtResource("1_hfwxo")
+atlas = ExtResource("2_q43ul")
 region = Rect2(80, 16, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xtlhs"]
@@ -26,7 +26,7 @@ radius = 6.0
 material = SubResource("ShaderMaterial_e1ujq")
 position = Vector2(0, -3)
 texture = SubResource("AtlasTexture_7csuc")
-script = ExtResource("2_jja7a")
+script = ExtResource("3_16mfv")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -34,13 +34,13 @@ script = ExtResource("2_jja7a")
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_xtlhs")
 
-[node name="HurtComponent" parent="." instance=ExtResource("3_8f7y7")]
-tool = 1
+[node name="HurtComponent" parent="." instance=ExtResource("4_clp25")]
+tool = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_80w6r")
 debug_color = Color(0.665617, 0.510119, 0.103346, 0.42)
 
-[node name="DamageComponent" parent="." instance=ExtResource("4_pftfh")]
+[node name="DamageComponent" parent="." instance=ExtResource("5_fjv71")]
 max_damage = 5

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d28s0tson80u2"
-path="res://.godot/imported/stars_in_wood.png-10a635260a76c9e41e8871d8d7164d4a.ctex"
+uid="uid://d4frr5v85g2hc"
+path="res://.godot/imported/white_icons.png-43ef487c00555c907e88915130356fe7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/ui_sprites/icons/special_icons/stars_in_wood.png"
-dest_files=["res://.godot/imported/stars_in_wood.png-10a635260a76c9e41e8871d8d7164d4a.ctex"]
+source_file="res://assets/game/ui_sprites/dialouge_ui/icons/white_icons.png"
+dest_files=["res://.godot/imported/white_icons.png-43ef487c00555c907e88915130356fe7.ctex"]
 
 [params]
 
