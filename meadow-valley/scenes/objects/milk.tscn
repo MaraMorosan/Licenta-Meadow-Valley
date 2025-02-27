@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0v4tmje0x3ke"]
+
+[ext_resource type="Texture2D" uid="uid://c3kdv4wadmn8n" path="res://assets/game/objects/items/milk_items.png" id="1_eqgyo"]
+[ext_resource type="PackedScene" uid="uid://cjhuelsfvgqit" path="res://scenes/components/collectable_component.tscn" id="2_78xey"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm1gt"]
+atlas = ExtResource("1_eqgyo")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_16hny"]
+radius = 8.06226
+
+[node name="Milk" type="Sprite2D"]
+texture = SubResource("AtlasTexture_jm1gt")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_78xey")]
+y_sort_enabled = true
+collectable_name = "milk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_16hny")
