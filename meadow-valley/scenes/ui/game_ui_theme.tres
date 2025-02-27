@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=18 format=3 uid="uid://dhhpoq7x3bguc"]
+[gd_resource type="Theme" load_steps=21 format=3 uid="uid://dhhpoq7x3bguc"]
 
 [ext_resource type="Texture2D" uid="uid://ual8n2j4nff4" path="res://assets/game/ui_sprites/all_ui_assets_on_one_sheet.png" id="1_jiwn4"]
+[ext_resource type="FontVariation" uid="uid://cq5oj1w1sxrgt" path="res://assets/game/ui_sprites/fonts/pixel_font_variation.tres" id="2_5fna3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p6lbq"]
 atlas = ExtResource("1_jiwn4")
@@ -13,6 +14,17 @@ texture_margin_top = 7.0
 texture_margin_right = 7.0
 texture_margin_bottom = 7.0
 region_rect = Rect2(0, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8mwi"]
+atlas = ExtResource("1_jiwn4")
+region = Rect2(59, 107, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xe4ko"]
+texture = SubResource("AtlasTexture_j8mwi")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e0o76"]
 load_path = "res://.godot/imported/all_ui_assets_on_one_sheet.png-63d21034f85fa43fb682cf89116ec105.ctex"
@@ -89,6 +101,11 @@ region_rect = Rect2(0, 0, 26, 28)
 [resource]
 DarkWoodPanel/base_type = &"PanelContainer"
 DarkWoodPanel/styles/panel = SubResource("StyleBoxTexture_08c0j")
+InventoryItemPanel/base_type = &"PanelContainer"
+InventoryItemPanel/styles/panel = SubResource("StyleBoxTexture_xe4ko")
+InventoryLabel/base_type = &"Label"
+InventoryLabel/font_sizes/font_size = 9
+InventoryLabel/fonts/font = ExtResource("2_5fna3")
 MarginContainer/constants/margin_bottom = 10
 MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
