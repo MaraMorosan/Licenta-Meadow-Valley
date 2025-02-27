@@ -1,0 +1,9 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://cq5oj1w1sxrgt"]
+
+[ext_resource type="FontFile" uid="uid://brt6ar81luvpt" path="res://assets/game/ui_sprites/fonts/pixel_font.ttf" id="1_ybuvv"]
+
+[resource]
+base_font = ExtResource("1_ybuvv")
+variation_embolden = 0.36
+variation_transform = Transform2D(0.965, 0, 0, 0.965, 0, 0)
+spacing_bottom = -1
