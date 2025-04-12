@@ -57,5 +57,5 @@ position = Vector2(202, 180)
 
 [node name="GameScreen" parent="." instance=ExtResource("3_ypkbd")]
 
-[connection signal="animation_finished" from="GameTilemap/Objects/LargeTree" to="GameTilemap/Objects/LargeTree" method="_on_animation_finished"]
-[connection signal="animation_finished" from="GameTilemap/Objects/@AnimatedSprite2D@18544" to="GameTilemap/Objects/@AnimatedSprite2D@18544" method="_on_animation_finished"]
+[connection signal="animation_finished" from="GameTilemap/Objects/@AnimatedSprite2D@22781" to="GameTilemap/Objects/@AnimatedSprite2D@22781" method="_on_animation_finished"]
+[connection signal="animation_finished" from="GameTilemap/Objects/@AnimatedSprite2D@22782" to="GameTilemap/Objects/@AnimatedSprite2D@22782" method="_on_animation_finished"]
