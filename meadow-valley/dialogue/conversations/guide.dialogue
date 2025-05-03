@@ -1,0 +1,12 @@
+~ start
+Mittens: [[Hi|Hello|Howdy]], nice to meet you.  
+Mittens: Welcome to your new farm.  
+Mittens: As you can see the cows and chickens are hungry.  
+Mittens: You need to grow some crops to feed them.  
+Mittens: Here are some seeds to grow some crops.
+- Take crop seeds  
+	Teemo: Yeah, I can grow crops.  
+	do GameDialogueManager.action_give_crop_seeds()  
+- No, I don't want them  
+	Teemo: I'm not ready to grow my farm yet.
+=> END
