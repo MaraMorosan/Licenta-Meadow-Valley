@@ -31,7 +31,7 @@ tile_set = ExtResource("1_esrdw")
 
 [node name="Objects" type="TileMapLayer" parent="GameTilemap"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAIAAkACgAAAAAABQAPAAgACgAAAAAABQALAAYACgAAAAAABAAQAAwACgAAAAAABAAIAAwACgAAAAAABAAJAAsABQABAAMAAAAOAAsABQAAAAMAAAA=")
+tile_map_data = PackedByteArray("AAAIAAkACgAAAAAABQAIAAwACgAAAAAABAAJAAsABQABAAMAAAALAAYACgAAAAAABAAOAAsABQAAAAMAAAAPAAgACgAAAAAABQAQAAwACgAAAAAABAA=")
 tile_set = ExtResource("1_esrdw")
 
 [node name="Crops" type="Node2D" parent="."]
@@ -56,6 +56,3 @@ position = Vector2(202, 180)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="GameScreen" parent="." instance=ExtResource("3_ypkbd")]
-
-[connection signal="animation_finished" from="GameTilemap/Objects/@AnimatedSprite2D@22781" to="GameTilemap/Objects/@AnimatedSprite2D@22781" method="_on_animation_finished"]
-[connection signal="animation_finished" from="GameTilemap/Objects/@AnimatedSprite2D@22782" to="GameTilemap/Objects/@AnimatedSprite2D@22782" method="_on_animation_finished"]

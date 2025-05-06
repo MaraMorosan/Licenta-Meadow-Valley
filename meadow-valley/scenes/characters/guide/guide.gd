@@ -1,6 +1,6 @@
 extends Node2D
 
-var balloon_scene = preload("res://dialogue/game_dialogue_baloon.tscn")
+var balloon_scene = preload("res://dialogue/game_dialogue_balloon.tscn")
 
 @onready var interactable_component: InteractableComponent = $InteractableComponent
 @onready var interactable_label_component: Control = $InteractableLabelComponent

@@ -270,14 +270,15 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fum1a"]
-radius = 6.08276
+radius = 8.0
 
 [node name="Cow" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_layer = 64
 script = ExtResource("1_4en0s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -13)
+position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_s80k5")
 animation = &"idle"
 autoplay = "idle"
