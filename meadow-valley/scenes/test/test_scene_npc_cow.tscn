@@ -35,12 +35,12 @@ y_sort_enabled = true
 tile_set = ExtResource("1_v0ikb")
 
 [node name="Player" parent="." instance=ExtResource("2_0pk13")]
-y_sort_enabled = true
 position = Vector2(202, 180)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="Cows" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Cows"]
 position = Vector2(52, -2)
