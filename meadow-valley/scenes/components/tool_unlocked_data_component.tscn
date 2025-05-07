@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgmi3qmxh3ple"]
+
+[ext_resource type="Script" path="res://scenes/components/tool_unlocked_data_component.gd" id="1_a61py"]
+
+[node name="ToolUnlockedDataComponent" type="Node"]
+script = ExtResource("1_a61py")

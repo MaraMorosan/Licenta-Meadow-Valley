@@ -47,6 +47,22 @@ func load_game() -> void:
 	var root_node: Window = get_tree().root
 
 	for resource in game_data_resource.save_data_nodes:
-		if resource is Resource:
-			if resource is NodeDataResource:
-				resource._load_data(root_node)
+		if resource is NodeDataResource:
+			var crop_type = resource.data.get("crop_type", null)
+			var position = resource.data.get("position", null)
+
+			if crop_type != null and position != null:
+				var crop_node = CropSpawnerManager.spawn_crop(position, crop_type)
+				if crop_node:
+					var save_component = crop_node.get_node_or_null("VegetableSaveDataComponent")
+					if save_component:
+						save_component.data = resource.data
+						save_component._load_data(get_tree().root)
+			else:
+				if resource.data.has("unlocked_tools"):
+					var tool_node = get_tree().get_first_node_in_group("tool_unlock_data")
+					if tool_node:
+						tool_node.data = resource.data
+						tool_node._load_data(get_tree().root)
+				else:
+					resource._load_data(root_node)

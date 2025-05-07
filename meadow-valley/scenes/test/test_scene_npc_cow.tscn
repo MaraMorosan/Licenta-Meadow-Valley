@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b62l3anfavqpj" path="res://scenes/characters/player/player.tscn" id="2_0pk13"]
 [ext_resource type="PackedScene" uid="uid://byngxjenp1ghv" path="res://scenes/characters/cow/cow.tscn" id="3_xbxkx"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_cg6wi"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_2fsdv"]
 vertices = PackedVector2Array(422.133, 81.4688, 448.023, 180.57, 396.508, 242.727, 224.969, 233.461, 211.406, 115.031, 248.492, 69.3438)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(244, 59, 430, 72, 459, 183, 401, 253, 216, 243, 201, 112)])
@@ -44,7 +44,7 @@ y_sort_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Cows"]
 position = Vector2(52, -2)
-navigation_polygon = SubResource("NavigationPolygon_cg6wi")
+navigation_polygon = SubResource("NavigationPolygon_2fsdv")
 navigation_layers = 2
 
 [node name="Cow" parent="Cows" instance=ExtResource("3_xbxkx")]
