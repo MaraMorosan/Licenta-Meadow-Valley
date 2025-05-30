@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cobra5ofxth08"]
-
-[ext_resource type="Script" path="res://scenes/components/vegetable_save_data_component.gd" id="1_depj8"]
-
-[node name="VegetableSaveDataComponent" type="Node"]
-script = ExtResource("1_depj8")
