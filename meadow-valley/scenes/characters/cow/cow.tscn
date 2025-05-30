@@ -292,7 +292,6 @@ path_desired_distance = 10.0
 navigation_layers = 2
 path_postprocessing = 1
 avoidance_enabled = true
-radius = 15.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("2_aoyo2")

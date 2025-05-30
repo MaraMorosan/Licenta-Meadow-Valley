@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b62l3anfavqpj" path="res://scenes/characters/player/player.tscn" id="2_0pk13"]
 [ext_resource type="PackedScene" uid="uid://b15no2syi7oq0" path="res://scenes/characters/chicken/chicken.tscn" id="3_rw128"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_cg6wi"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_6nim3"]
 vertices = PackedVector2Array(375.211, 142.828, 383.078, 226.773, 237.344, 237.367, 217.219, 118.391, 247.719, 106.656, 347.461, 88.1875)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(245, 97, 353, 77, 385, 140, 394, 236, 229, 248, 206, 112)])
@@ -43,7 +43,7 @@ position = Vector2(202, 180)
 y_sort_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Chickens"]
-navigation_polygon = SubResource("NavigationPolygon_cg6wi")
+navigation_polygon = SubResource("NavigationPolygon_6nim3")
 
 [node name="Chicken" parent="Chickens" instance=ExtResource("3_rw128")]
 position = Vector2(250, 217)
