@@ -28,8 +28,16 @@ func save_game() -> void:
 
 	var level_save_file_name: String = save_file_name % level_scene_name
 	save_node_data()
+	
+	game_data_resource.inventory_data = InventoryManager.inventory.duplicate()
+	
+	game_data_resource.saved_day    = DayAndNightCycleManager.current_day
+	game_data_resource.saved_hour   = DayAndNightCycleManager.current_hour
+	game_data_resource.saved_minute = DayAndNightCycleManager.current_minute
 
-	var result: int = ResourceSaver.save(game_data_resource, save_game_data_path + level_save_file_name)
+	var full_path: String = save_game_data_path + level_save_file_name
+	
+	var result: int = ResourceSaver.save(game_data_resource, full_path)
 	print("Save result:", result)
 
 func load_game() -> void:
@@ -40,9 +48,23 @@ func load_game() -> void:
 		return
 
 	game_data_resource = ResourceLoader.load(save_game_path)
-
 	if game_data_resource == null:
 		return
+
+	DayAndNightCycleManager.set_time(
+		game_data_resource.saved_day,
+		game_data_resource.saved_hour,
+		game_data_resource.saved_minute
+)
+	
+	DayAndNightCycleManager.time_tick.emit(
+		game_data_resource.saved_day,
+		game_data_resource.saved_hour,
+		game_data_resource.saved_minute
+)
+	
+	InventoryManager.inventory = game_data_resource.inventory_data.duplicate()
+	InventoryManager.inventory_changed.emit()
 
 	var root_node: Window = get_tree().root
 

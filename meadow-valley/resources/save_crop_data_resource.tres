@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="SaveCropDataResource" load_steps=2 format=3 uid="uid://durjua6qvoq6g"]
+
+[sub_resource type="GDScript" id="GDScript_jpc7r"]
+script/source = "extends NodeDataResource
+class_name SaveCropDataResource
+
+@export var node_name: String = \"\"
+@export var scene_file_path: String = \"\"
+@export var growth_state: int = 1
+
+func _save_data(node: Node2D) -> void:
+	super._save_data(node)
+
+	node_name = node.name
+
+	if node.has_meta(\"scene_file_path\"):
+		scene_file_path = str(node.get_meta(\"scene_file_path\"))
+	elif node.has_method(\"get_scene_file_path\"):
+		scene_file_path = node.get_scene_file_path()
+	else:
+		scene_file_path = node.get(\"scene_file_path\")
+
+	if node.has_node(\"GrowthCycleComponent\"):
+		var gc = node.get_node(\"GrowthCycleComponent\") as GrowthCycleComponent
+		growth_state = int(gc.current_growth_state)
+	else:
+		growth_state = 1
+
+func _load_data(window: Node) -> void:
+	var parent_node: Node2D = null
+	if parent_node_path != null and window != null:
+		parent_node = window.get_node_or_null(parent_node_path) as Node2D
+
+	var inst: Node2D = null
+	if scene_file_path != \"\":
+		var res = ResourceLoader.load(scene_file_path)
+		if res:
+			inst = res.instantiate() as Node2D
+
+	if parent_node != null and inst != null:
+		inst.name = node_name
+		inst.global_position = global_position
+		parent_node.add_child(inst)
+
+	if inst.has_node(\"GrowthCycleComponent\"):
+		var gc = inst.get_node(\"GrowthCycleComponent\") as GrowthCycleComponent
+		gc.set_growth_state(growth_state)
+"
+
+[resource]
+script = SubResource("GDScript_jpc7r")
+node_name = ""
+scene_file_path = ""
+growth_state = 1
+global_position = Vector2(0, 0)
+node_path = NodePath("")
+parent_node_path = NodePath("")
