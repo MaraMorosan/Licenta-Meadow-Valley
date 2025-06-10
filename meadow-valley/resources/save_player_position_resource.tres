@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dcmia8fklxlxx"]
+
+[ext_resource type="Script" path="res://resources/save_player_position_resource.gd" id="1_rfb04"]
+
+[resource]
+script = ExtResource("1_rfb04")
+global_position = Vector2(0, 0)
+node_path = NodePath("")
+parent_node_path = NodePath("")
