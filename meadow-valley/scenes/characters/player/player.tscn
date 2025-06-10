@@ -1,4 +1,4 @@
-[gd_scene load_steps=206 format=3 uid="uid://b62l3anfavqpj"]
+[gd_scene load_steps=208 format=3 uid="uid://b62l3anfavqpj"]
 
 [ext_resource type="Script" path="res://scenes/characters/player/player.gd" id="1_a3w5j"]
 [ext_resource type="Texture2D" uid="uid://231scq4g7k2w" path="res://assets/game/characters/complete_character_spritesheet.png" id="1_km12q"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://scenes/characters/player/tilling_state.gd" id="8_sh7vm"]
 [ext_resource type="Script" path="res://scenes/characters/player/watering_state.gd" id="9_6uumn"]
 [ext_resource type="PackedScene" uid="uid://dyimij8cij0so" path="res://scenes/components/hit_component.tscn" id="10_d6hrt"]
+[ext_resource type="PackedScene" uid="uid://c3qnwidcc84hh" path="res://scenes/components/save_data_component.tscn" id="11_3lu2y"]
+[ext_resource type="Resource" uid="uid://dcmia8fklxlxx" path="res://resources/save_player_position_resource.tres" id="12_us2l1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mlida"]
 atlas = ExtResource("1_km12q")
@@ -1488,6 +1490,9 @@ radius = 3.16228
 y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_a3w5j")
+
+[node name="SaveDataComponent" parent="." instance=ExtResource("11_3lu2y")]
+save_data_resource = ExtResource("12_us2l1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0uc8v")

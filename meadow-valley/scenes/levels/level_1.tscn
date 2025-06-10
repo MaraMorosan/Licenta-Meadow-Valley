@@ -75,8 +75,7 @@ position = Vector2(117, 208)
 position = Vector2(802, 169)
 
 [node name="MediumHouse" parent="GameTilemap/Houses" instance=ExtResource("4_7bop4")]
-position = Vector2(811, 544)
-rotation = -3.14889
+position = Vector2(615, 724)
 
 [node name="CropFields" type="Node2D" parent="."]
 

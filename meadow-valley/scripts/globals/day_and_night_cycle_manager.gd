@@ -1,18 +1,19 @@
 extends Node
 
-const MINUTES_PER_DAY: int = 24 * 60
-const MINUTES_PER_HOUR: int = 60
+const MINUTES_PER_DAY:  int   = 24 * 60
+const MINUTES_PER_HOUR: int   = 60
 const GAME_MINUTE_DURATION: float = TAU / MINUTES_PER_DAY
 
 var game_speed: float = 5.0
 
-var initial_day: int = 1
-var initial_hour: int = 12
+var initial_day:    int = 1
+var initial_hour:   int = 12
 var initial_minute: int = 30
 
 var time: float = 0.0
 var current_minute: int = -1
-var current_day: int = 0
+var current_hour:   int = -1
+var current_day:    int = 0
 
 signal game_time(time: float)
 signal time_tick(day: int, hour: int, minute: int)
@@ -41,8 +42,17 @@ func recalculate_time() -> void:
 	
 	if current_minute != minute:
 		current_minute = minute
+		current_hour  = hour
 		time_tick.emit(day, hour, minute)
 	
 	if current_day != day:
 		current_day = day
 		time_tick_day.emit(day)
+
+func set_time(day: int, hour: int, minute: int) -> void:
+	var total_minutes = day * MINUTES_PER_DAY + hour * MINUTES_PER_HOUR + minute
+	time = total_minutes * GAME_MINUTE_DURATION
+	
+	current_day = day
+	current_hour = hour
+	current_minute = minute

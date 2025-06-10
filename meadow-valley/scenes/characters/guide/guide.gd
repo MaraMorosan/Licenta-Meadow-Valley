@@ -30,15 +30,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			balloon.start(load("res://dialogue/conversations/guide.dialogue"), "start")
 
 func on_give_crop_seeds() -> void:
-	var unlock_data = get_tree().get_first_node_in_group("tool_unlock_data")
-	if unlock_data == null:
-		print("⚠️ ToolUnlockDataComponent not found!")
-		return
-
-	unlock_data.unlocked_tools.append(DataTypes.Tools.TillGround)
-	unlock_data.unlocked_tools.append(DataTypes.Tools.WaterCrops)
-	unlock_data.unlocked_tools.append(DataTypes.Tools.PlantCorn)
-	unlock_data.unlocked_tools.append(DataTypes.Tools.PlantTomato)
-
-	for tool in unlock_data.unlocked_tools:
-		ToolManager.enable_tool_button(tool)
+	ToolManager.unlock_tool(DataTypes.Tools.TillGround)
+	ToolManager.unlock_tool(DataTypes.Tools.WaterCrops)
+	ToolManager.unlock_tool(DataTypes.Tools.PlantCorn)
+	ToolManager.unlock_tool(DataTypes.Tools.PlantTomato)

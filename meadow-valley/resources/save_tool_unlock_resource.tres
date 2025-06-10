@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dby1sa8jg6825"]
+
+[sub_resource type="GDScript" id="GDScript_d1nri"]
+script/source = "extends NodeDataResource
+class_name SaveToolUnlockResource
+
+@export var unlocked_tools: Array = []
+
+func _save_data(node: Node2D) -> void:
+	super._save_data(node)
+	unlocked_tools = ToolManager.get_unlocked_tools().duplicate()
+
+func _load_data(window: Node) -> void:
+	for tool in unlocked_tools:
+		ToolManager.enable_tool_button(tool)
+"
+
+[resource]
+script = SubResource("GDScript_d1nri")
+unlocked_tools = []
+global_position = Vector2(0, 0)
+node_path = NodePath("")
+parent_node_path = NodePath("")

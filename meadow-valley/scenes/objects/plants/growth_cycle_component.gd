@@ -7,46 +7,47 @@ extends Node
 signal crop_maturity
 signal crop_harvesting
 
-var is_watered: bool
-var starting_day: int
-var current_day: int
+var is_watered: bool = false
+var starting_day: int = 0
+var current_day: int = 0
+
 func _ready() -> void:
 	DayAndNightCycleManager.time_tick_day.connect(on_time_tick_day)
 
 func on_time_tick_day(day: int) -> void:
-	if is_watered:
-		if starting_day == 0:
-			starting_day = day
-		
-		growth_states(starting_day, day)
-		harvest_state(starting_day, day)
-
-func growth_states(starting_day: int, current_day: int) -> void:
-	if current_growth_state == DataTypes.GrowthStates.Maturity:
+	current_day = day
+	if not is_watered:
 		return
-		
-	var number_of_states = 5
-	
-	var growth_days_passed = (current_day - starting_day) % number_of_states
-	var state_index = growth_days_passed % number_of_states + 1
-	
-	current_growth_state = state_index
-	
-	var name = DataTypes.GrowthStates.keys()[current_growth_state]
-	print("Current growth state: ", name, "State index: ", state_index)
-	
-	if current_growth_state == DataTypes.GrowthStates.Maturity:
-		crop_maturity.emit()
 
-func harvest_state(starting_day: int, current_day: int) -> void:
-	if current_growth_state == DataTypes.GrowthStates.Harvesting:
+	if starting_day == 0:
+		starting_day = day
+
+	var days_since = current_day - starting_day
+
+	_advance_growth(days_since)
+	_advance_harvest(days_since)
+
+func _advance_growth(days_since: int) -> void:
+	if current_growth_state >= DataTypes.GrowthStates.Maturity:
 		return
-	
-	var days_passed = (current_day - starting_day) % days_until_harvest
-	
-	if days_passed == days_until_harvest - 1:
+
+	var new_state = int(current_growth_state) + days_since
+	new_state = min(new_state, DataTypes.GrowthStates.Maturity)
+	if new_state != int(current_growth_state):
+		current_growth_state = new_state
+		if current_growth_state == DataTypes.GrowthStates.Maturity:
+			emit_signal("crop_maturity")
+
+func _advance_harvest(days_since: int) -> void:
+	if current_growth_state != DataTypes.GrowthStates.Maturity:
+		return
+
+	if days_since >= days_until_harvest - 2:
 		current_growth_state = DataTypes.GrowthStates.Harvesting
-		crop_harvesting.emit() 
+		emit_signal("crop_harvesting")
 
 func get_current_growth_state() -> DataTypes.GrowthStates:
 	return current_growth_state
+
+func set_growth_state(new_state: int) -> void:
+	current_growth_state = new_state
