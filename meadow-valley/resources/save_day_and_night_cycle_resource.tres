@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://6xdw0lyu21q5"]
+
+[ext_resource type="Script" path="res://resources/save_day_and_night_cycle_resource.gd" id="1_q2mof"]
+
+[resource]
+script = ExtResource("1_q2mof")

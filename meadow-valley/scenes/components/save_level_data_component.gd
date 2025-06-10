@@ -1,6 +1,8 @@
 class_name SaveLevelDataComponent
 extends Node
 
+const SaveToolUnlockResource = preload("res://resources/save_tool_unlock_resource.gd")
+
 var level_scene_name: String
 var save_game_data_path: String = "user://saves/"
 var save_file_name: String = "save_%s_game_data.tres"
@@ -34,7 +36,11 @@ func save_game() -> void:
 	game_data_resource.saved_day    = DayAndNightCycleManager.current_day
 	game_data_resource.saved_hour   = DayAndNightCycleManager.current_hour
 	game_data_resource.saved_minute = DayAndNightCycleManager.current_minute
-
+	
+	var tool_res = SaveToolUnlockResource.new()
+	tool_res.unlocked_tools = ToolManager.get_unlocked_tools().duplicate()
+	game_data_resource.save_data_nodes.append(tool_res)
+	
 	var full_path: String = save_game_data_path + level_save_file_name
 	
 	var result: int = ResourceSaver.save(game_data_resource, full_path)
@@ -67,24 +73,7 @@ func load_game() -> void:
 	InventoryManager.inventory_changed.emit()
 
 	var root_node: Window = get_tree().root
-
+	
 	for resource in game_data_resource.save_data_nodes:
 		if resource is NodeDataResource:
-			var crop_type = resource.data.get("crop_type", null)
-			var position = resource.data.get("position", null)
-
-			if crop_type != null and position != null:
-				var crop_node = CropSpawnerManager.spawn_crop(position, crop_type)
-				if crop_node:
-					var save_component = crop_node.get_node_or_null("VegetableSaveDataComponent")
-					if save_component:
-						save_component.data = resource.data
-						save_component._load_data(get_tree().root)
-			else:
-				if resource.data.has("unlocked_tools"):
-					var tool_node = get_tree().get_first_node_in_group("tool_unlock_data")
-					if tool_node:
-						tool_node.data = resource.data
-						tool_node._load_data(get_tree().root)
-				else:
-					resource._load_data(root_node)
+			resource._load_data(root_node)

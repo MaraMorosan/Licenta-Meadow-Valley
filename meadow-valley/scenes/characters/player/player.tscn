@@ -1491,6 +1491,9 @@ y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_a3w5j")
 
+[node name="SaveDataComponent" parent="." instance=ExtResource("11_3lu2y")]
+save_data_resource = ExtResource("12_us2l1")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0uc8v")
 animation = &"idle_front"
@@ -1543,6 +1546,3 @@ hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisi
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
 shape = SubResource("CircleShape2D_regoy")
 debug_color = Color(0.739286, 0.231657, 0.987335, 0.42)
-
-[node name="SaveDataComponent" parent="." instance=ExtResource("11_3lu2y")]
-save_data_resource = ExtResource("12_us2l1")
