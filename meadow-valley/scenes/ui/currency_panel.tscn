@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx3xxxmxj6vbr"]
+
+[ext_resource type="Theme" uid="uid://dhhpoq7x3bguc" path="res://scenes/ui/game_ui_theme.tres" id="1_jg11r"]
+[ext_resource type="Texture2D" uid="uid://ual8n2j4nff4" path="res://assets/game/ui_sprites/all_ui_assets_on_one_sheet.png" id="2_3ptqf"]
+[ext_resource type="Script" path="res://scenes/ui/currency_panel.gd" id="2_l5ctq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2u72"]
+atlas = ExtResource("2_3ptqf")
+region = Rect2(736, 560, 16, 16)
+
+[node name="CurrencyPanel" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_jg11r")
+theme_type_variation = &"DarkWoodPanel"
+script = ExtResource("2_l5ctq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Coins" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(26, 32)
+layout_mode = 2
+theme_type_variation = &"CurrencyItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Coins"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_y2u72")
+
+[node name="CoinLabel" type="Label" parent="MarginContainer/VBoxContainer/Coins"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_type_variation = &"InventoryLabel"
+text = "0"
