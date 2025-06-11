@@ -1,10 +1,22 @@
-[gd_resource type="Theme" load_steps=54 format=3 uid="uid://dhhpoq7x3bguc"]
+[gd_resource type="Theme" load_steps=56 format=3 uid="uid://dhhpoq7x3bguc"]
 
 [ext_resource type="Texture2D" uid="uid://ual8n2j4nff4" path="res://assets/game/ui_sprites/all_ui_assets_on_one_sheet.png" id="1_jiwn4"]
 [ext_resource type="Texture2D" uid="uid://bvguu8y03g6bg" path="res://assets/game/ui_sprites/basic_ui_sheet.png" id="2_6ckxh"]
 [ext_resource type="FontFile" uid="uid://brt6ar81luvpt" path="res://assets/game/ui_sprites/fonts/pixel_font.ttf" id="3_wky5x"]
 [ext_resource type="FontFile" uid="uid://cmj8k1yghh3pi" path="res://assets/game/fonts/pixelFont-7-8x14-sproutLands.ttf" id="4_x3wxt"]
 [ext_resource type="FontFile" uid="uid://du3vp1ksitew3" path="res://assets/game/ui_sprites/fonts/pixelFont-7-8x14-sproutLands.ttf" id="5_kcyt4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgpd8"]
+atlas = ExtResource("1_jiwn4")
+region = Rect2(59, 107, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4frd5"]
+texture = SubResource("AtlasTexture_rgpd8")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 26, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p6lbq"]
 atlas = ExtResource("1_jiwn4")
@@ -252,6 +264,8 @@ texture_margin_bottom = 6.0
 region_rect = Rect2(0, 0, 26, 28)
 
 [resource]
+CurrencyItemPanel/base_type = &"PanelContainer"
+CurrencyItemPanel/styles/panel = SubResource("StyleBoxTexture_4frd5")
 DarkWoodPanel/base_type = &"PanelContainer"
 DarkWoodPanel/styles/panel = SubResource("StyleBoxTexture_08c0j")
 DayAndNightButton/base_type = &"Button"

@@ -1,0 +1,105 @@
+[gd_scene load_steps=17 format=3 uid="uid://babeohwn2irgj"]
+
+[ext_resource type="Script" path="res://scenes/characters/shopkeeper/shopkeeper.gd" id="1_fkxqa"]
+[ext_resource type="Shader" path="res://scenes/characters/shopkeeper/replace_color_shopkeeper.gdshader" id="2_ishfs"]
+[ext_resource type="Texture2D" uid="uid://231scq4g7k2w" path="res://assets/game/characters/complete_character_spritesheet.png" id="3_c7rx4"]
+[ext_resource type="PackedScene" uid="uid://decxioswoyeb3" path="res://scenes/components/interactable_component.tscn" id="4_nimnf"]
+[ext_resource type="PackedScene" uid="uid://wfsn5j4hrf8w" path="res://scenes/components/interactable_label_component.tscn" id="5_evej7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_75aw4"]
+shader = ExtResource("2_ishfs")
+shader_parameter/original_0 = Color(0.360784, 0.305882, 0.572549, 1)
+shader_parameter/original_1 = Color(0.462745, 0.427451, 0.666667, 1)
+shader_parameter/replace_0 = Color(0.858824, 0.564706, 0.615686, 1)
+shader_parameter/replace_1 = Color(0.52549, 0.72549, 0.886275, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwuai"]
+atlas = ExtResource("3_c7rx4")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m55l"]
+atlas = ExtResource("3_c7rx4")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmi16"]
+atlas = ExtResource("3_c7rx4")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atp1s"]
+atlas = ExtResource("3_c7rx4")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swpgr"]
+atlas = ExtResource("3_c7rx4")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ajmf"]
+atlas = ExtResource("3_c7rx4")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iartm"]
+atlas = ExtResource("3_c7rx4")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ror8o"]
+atlas = ExtResource("3_c7rx4")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxsri"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwuai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m55l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmi16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atp1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swpgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ajmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iartm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ror8o")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e1elx"]
+radius = 18.0
+
+[node name="Shopkeeper" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_fkxqa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_75aw4")
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_lxsri")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.557285
+
+[node name="InteractableComponent" parent="." instance=ExtResource("4_nimnf")]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+shape = SubResource("CircleShape2D_e1elx")
+
+[node name="InteractableLabelComponent" parent="." instance=ExtResource("5_evej7")]
+offset_left = -27.0
+offset_top = -34.0
+offset_right = -9.0
+offset_bottom = -16.0

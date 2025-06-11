@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://5y26uo4w2hag"]
+[gd_scene load_steps=7 format=3 uid="uid://5y26uo4w2hag"]
 
 [ext_resource type="Theme" uid="uid://dhhpoq7x3bguc" path="res://scenes/ui/game_ui_theme.tres" id="1_dpeep"]
 [ext_resource type="PackedScene" uid="uid://bdt4vu0u52rmo" path="res://scenes/ui/emotes_panel.tscn" id="2_hav0c"]
 [ext_resource type="PackedScene" uid="uid://ceokhsi8vsy8s" path="res://scenes/ui/tools_panel.tscn" id="2_wud7g"]
 [ext_resource type="PackedScene" uid="uid://50p7vj71inng" path="res://scenes/ui/inventory_panel.tscn" id="3_d2bqg"]
+[ext_resource type="PackedScene" uid="uid://dx3xxxmxj6vbr" path="res://scenes/ui/currency_panel.tscn" id="3_j3lkf"]
 [ext_resource type="PackedScene" uid="uid://cdp1x2y0fk4ca" path="res://scenes/ui/day_and_night_panel.tscn" id="4_hkivu"]
 
 [node name="GameScreen" type="CanvasLayer"]
@@ -24,6 +25,9 @@ size_flags_vertical = 0
 [node name="EmotesPanel" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_hav0c")]
 layout_mode = 2
 size_flags_horizontal = 4
+
+[node name="CurrencyPanel" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_j3lkf")]
+layout_mode = 2
 
 [node name="InventoryPanel" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_d2bqg")]
 layout_mode = 2

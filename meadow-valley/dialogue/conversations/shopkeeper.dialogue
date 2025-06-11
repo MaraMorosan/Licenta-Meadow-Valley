@@ -1,0 +1,9 @@
+~ start
+Poppy: [[Hi|Hello|Howdy]], nice to meet you!  
+Poppy: Would you like to sell your items?  
+- Sell items  
+	Teemo: Yeah, I can sell my items.  
+	do GameDialogueManager.action_sell_items()  
+- Don't sell anything  
+	Teemo: I don't need to sell anything yet.
+=> END

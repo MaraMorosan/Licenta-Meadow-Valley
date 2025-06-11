@@ -37,6 +37,8 @@ func save_game() -> void:
 	game_data_resource.saved_hour   = DayAndNightCycleManager.current_hour
 	game_data_resource.saved_minute = DayAndNightCycleManager.current_minute
 	
+	game_data_resource.saved_coins = CurrencyManager.coins
+	
 	var tool_res = SaveToolUnlockResource.new()
 	tool_res.unlocked_tools = ToolManager.get_unlocked_tools().duplicate()
 	game_data_resource.save_data_nodes.append(tool_res)
@@ -71,7 +73,10 @@ func load_game() -> void:
 	
 	InventoryManager.inventory = game_data_resource.inventory_data.duplicate()
 	InventoryManager.inventory_changed.emit()
-
+	
+	CurrencyManager.coins = game_data_resource.saved_coins
+	CurrencyManager.emit_signal("coins_changed", CurrencyManager.coins)
+	
 	var root_node: Window = get_tree().root
 	
 	for resource in game_data_resource.save_data_nodes:
