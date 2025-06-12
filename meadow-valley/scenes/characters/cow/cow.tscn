@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://byngxjenp1ghv"]
+[gd_scene load_steps=46 format=3 uid="uid://byngxjenp1ghv"]
 
 [ext_resource type="Script" path="res://scenes/characters/cow/cow.gd" id="1_4en0s"]
 [ext_resource type="Texture2D" uid="uid://c52u5w4i0mto3" path="res://assets/game/animals/cow/light_cow_animations.png" id="1_kykls"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://scenes/characters/cow/eat_state.gd" id="5_lrum1"]
 [ext_resource type="Script" path="res://scenes/characters/cow/eat_grass_state.gd" id="6_i0vcn"]
 [ext_resource type="Script" path="res://scenes/characters/npc_states/walk_state.gd" id="7_of31v"]
+[ext_resource type="PackedScene" uid="uid://dr2ro40juwgej" path="res://audio/sfx/cow_moo_sfx.tscn" id="8_rvval"]
+[ext_resource type="PackedScene" uid="uid://dhx1kq8kjv5hq" path="res://scenes/components/audio_play_time_component.tscn" id="9_huaxh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nqn2y"]
 atlas = ExtResource("1_kykls")
@@ -291,6 +293,7 @@ shape = SubResource("CircleShape2D_fum1a")
 path_desired_distance = 10.0
 navigation_layers = 2
 path_postprocessing = 1
+simplify_path = true
 avoidance_enabled = true
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
@@ -317,3 +320,10 @@ script = ExtResource("7_of31v")
 character = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 navigation_agent_2d = NodePath("../../NavigationAgent2D")
+
+[node name="CowMooSFX" parent="." instance=ExtResource("8_rvval")]
+
+[node name="AudioPlayTimeComponent" parent="." node_paths=PackedStringArray("audio_stream_player_2D") instance=ExtResource("9_huaxh")]
+wait_time = 7.0
+autostart = true
+audio_stream_player_2D = NodePath("../CowMooSFX")
