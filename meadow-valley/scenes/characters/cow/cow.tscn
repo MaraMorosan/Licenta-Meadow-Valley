@@ -327,3 +327,4 @@ navigation_agent_2d = NodePath("../../NavigationAgent2D")
 wait_time = 7.0
 autostart = true
 audio_stream_player_2D = NodePath("../CowMooSFX")
+max_volume_db = -20.0

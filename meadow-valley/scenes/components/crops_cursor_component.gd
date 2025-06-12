@@ -42,6 +42,11 @@ func add_crop() -> void:
 	if cell_source_id < 0:
 		return
 
+	var crop_fields = get_parent().get_node("CropFields")
+	for child in crop_fields.get_children():
+		if child.global_position.distance_to(local_cell_position) < 1.0:
+			return
+
 	var inst: Node2D
 	if ToolManager.selected_tool == DataTypes.Tools.PlantCorn:
 		inst = corn_plant_scene.instantiate() as Node2D
@@ -49,7 +54,8 @@ func add_crop() -> void:
 		inst = tomato_plant_scene.instantiate() as Node2D
 
 	inst.global_position = local_cell_position
-	get_parent().find_child("CropFields").add_child(inst)
+	crop_fields.add_child(inst)
+
 
 func remove_crop() -> void:
 	if distance < 20.0:
