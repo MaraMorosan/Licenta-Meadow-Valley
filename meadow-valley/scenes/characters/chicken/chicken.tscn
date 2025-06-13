@@ -232,3 +232,4 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 wait_time = 5.0
 autostart = true
 audio_stream_player_2D = NodePath("../ChickenCluckMultipleSFX")
+max_volume_db = -20.0
