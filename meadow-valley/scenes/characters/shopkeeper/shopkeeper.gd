@@ -55,6 +55,8 @@ func on_sell_items() -> void:
 			var spawn_spread = 20
 			var sell_speed = 0.4
 			var delay_between = 0.05
+			
+			var coin_value = 2 if item_name == "corn" else 1
 
 			for i in range(count):
 				var inst = scene.instantiate() as Node2D
@@ -72,7 +74,7 @@ func on_sell_items() -> void:
 				var tween = get_tree().create_tween()
 				tween.tween_property(inst, "global_position", global_position, sell_speed)
 				tween.tween_callback(func ():
-					CurrencyManager.add_coins(1)
+					CurrencyManager.add_coins(coin_value)
 				)
 				tween.tween_callback(inst.queue_free)
 
