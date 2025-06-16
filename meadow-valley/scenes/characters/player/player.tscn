@@ -1498,6 +1498,8 @@ save_data_resource = ExtResource("12_us2l1")
 sprite_frames = SubResource("SpriteFrames_0uc8v")
 animation = &"idle_front"
 autoplay = "idle_front"
+frame = 5
+frame_progress = 0.577896
 offset = Vector2(0, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
