@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://5y26uo4w2hag"]
+[gd_scene load_steps=8 format=3 uid="uid://5y26uo4w2hag"]
 
 [ext_resource type="Theme" uid="uid://dhhpoq7x3bguc" path="res://scenes/ui/game_ui_theme.tres" id="1_dpeep"]
+[ext_resource type="PackedScene" uid="uid://7alut2ikkt8m" path="res://scenes/components/CommandInput.tscn" id="2_g55ge"]
 [ext_resource type="PackedScene" uid="uid://bdt4vu0u52rmo" path="res://scenes/ui/emotes_panel.tscn" id="2_hav0c"]
 [ext_resource type="PackedScene" uid="uid://ceokhsi8vsy8s" path="res://scenes/ui/tools_panel.tscn" id="2_wud7g"]
 [ext_resource type="PackedScene" uid="uid://50p7vj71inng" path="res://scenes/ui/inventory_panel.tscn" id="3_d2bqg"]
@@ -18,6 +19,11 @@ grow_vertical = 2
 theme = ExtResource("1_dpeep")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="CommandInput" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_g55ge")]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
